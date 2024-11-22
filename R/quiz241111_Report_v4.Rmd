@@ -43,7 +43,11 @@ class_roll$group <- class_roll1108$group[match(class_roll$id, class_roll1108$id)
 saveRDS(class_roll, file = "./class_roll_241115.RDS")
 quiz <- 
   read_excel("./data/quiz241111.xlsx",
+<<<<<<< HEAD
              range = "A2:N414",
+=======
+             range = "A2:N391",
+>>>>>>> 1a79865f4c852a84e3db3c22c0c4df216953e441
              col_names = FALSE)
 str(quiz)
 names(quiz) <- 
@@ -609,12 +613,20 @@ days_tbl %>%
 ```{r, echo = FALSE, warning = FALSE}
 days_tbl %>%
   rbind("계" = colSums(.)) %>%
+<<<<<<< HEAD
   `[`(3, 3:14) %>%
+=======
+  `[`(3, 4:14) %>%
+>>>>>>> 1a79865f4c852a84e3db3c22c0c4df216953e441
   pander
 days_chisq_test <-
   days_tbl %>%
   rbind("계" = colSums(.)) %>%
+<<<<<<< HEAD
   `[`(3, 3:14) %>%
+=======
+  `[`(3, 4:14) %>%
+>>>>>>> 1a79865f4c852a84e3db3c22c0c4df216953e441
   chisq.test(simulate.p.value = FALSE) 
 days_chisq_test %>%
   pander
@@ -652,11 +664,19 @@ invisible(dev.off())
 ```{r, echo = FALSE, warning = FALSE}
 days_tbl %>%
   rbind("계" = colSums(.)) %>%
+<<<<<<< HEAD
   `[`(-3, 3:14) %>%
   pander
 days_RnB_chisq_test <-
   days_tbl %>%
   `[`(-3, 3:14) %>%
+=======
+  `[`(-3, 4:14) %>%
+  pander
+days_RnB_chisq_test <-
+  days_tbl %>%
+  `[`(-3, 4:14) %>%
+>>>>>>> 1a79865f4c852a84e3db3c22c0c4df216953e441
   chisq.test(simulate.p.value = FALSE) 
 days_RnB_chisq_test %>%
   pander
